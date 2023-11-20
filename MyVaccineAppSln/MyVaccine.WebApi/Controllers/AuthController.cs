@@ -1,9 +1,12 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.IdentityModel.Tokens;
 using MyVaccine.WebApi.Dtos;
 using MyVaccine.WebApi.Literals;
+using MyVaccine.WebApi.Repositories.Contracts;
+using MyVaccine.WebApi.Services.Contracts;
 using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using System.Text;
@@ -14,74 +17,81 @@ namespace MyVaccine.WebApi.Controllers;
 [ApiController]
 public class AuthController : ControllerBase
 {
-    private readonly UserManager<IdentityUser> _userManager;
 
-    public AuthController(UserManager<IdentityUser> userManager)
-     {
-        _userManager = userManager;
+    private readonly IUserService _userService;
 
-     }
+    public AuthController(UserManager<IdentityUser> userManager, IUserService UserService)
+    {
+        _userService = UserService;
+    }
 
     [HttpPost("register")]
 
     public async Task<IActionResult> Register([FromBody] RegisterRequetDto model)
     {
-        var user = new IdentityUser
-        {
-            UserName = model.Username,
-            Email = model.Email
-        };
 
-        var result = await _userManager.CreateAsync(user, model.Password);
-
-        if (!result.Succeeded) 
+        var response = await _userService.AddUserAsync(model);
+        if (response.IsSucces)
         {
-        
-            return BadRequest(result.Errors);
-        
+            return Ok(response);
+
         }
-
-        return Ok("User registered successfully");
-
-
+        else
+        {
+            return BadRequest(response);
+        }
     }
+
 
     [HttpPost("login")]
 
     public async Task<IActionResult> Login([FromBody] LoginRequestDto model)
     {
-        var user = await _userManager.FindByNameAsync(model.Username);
-
-        if (user != null && await _userManager.CheckPasswordAsync(user, model.Password))
+        var response = await _userService.Login(model);
+        if (response.IsSucces)
         {
-            var claims = new[]
-            {
-                new Claim(ClaimTypes.Name, user.UserName),
-                
-            };
-
-            var Key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(Environment.GetEnvironmentVariable(MyVaccineLiterals.JWT_KEY)));
-            var creds = new SigningCredentials(Key, SecurityAlgorithms.HmacSha256);
-
-            var token = new JwtSecurityToken(
-                //issuer: _Configuration["JwtIssuer"],
-                //audience: _Configuration[JwtAudience],
-                claims: claims,
-                expires: DateTime.Now.AddMinutes(15),
-                signingCredentials: creds
-
-           );
-
-            return Ok(new
-            {
-                token = new JwtSecurityTokenHandler().WriteToken(token),
-                expiration = token.ValidTo
-            });
+            return Ok(response);
+        }
+        else
+        {
+            return Unauthorized(response);
         }
 
-        return Unauthorized();
 
     }
 
+    [Authorize]
+    [HttpPost("refresh-token")]
+    public async Task<IActionResult> RefreshToken()
+    {
+        var claimsIdentity = HttpContext.User.Identity as ClaimsIdentity;
+        var response = await _userService.RefreshToken(claimsIdentity.Name);
+        if (response.IsSucces)
+        {
+            return Ok(response);
+        }
+        else
+        {
+            return Unauthorized(response);
+        }
 
+
+        //var result = await _userRepository.AddUser(model);
+        //if (!result.Succeeded)
+        //{
+        //    return BadRequest(result.Errors);
+        //}
+        //return Ok("User registered successfully");
+
+    }
+
+    [Authorize]
+    [HttpGet("user-info")]
+    public async Task<IActionResult> GetUserInfo()
+    {
+        var claimsIdentity = HttpContext.User.Identity as ClaimsIdentity;
+        var response = await _userService.GetUserInfo(claimsIdentity.Name);
+
+        return Ok(response);
+    }
 }

@@ -1,5 +1,5 @@
 ﻿namespace MyVaccine.WebApi.Models;
-public class FamilyGroup
+public class FamilyGroup : BaseTable
 {
     public int FamilyGroupId { get; set; }
     public required string Name { get; set; }
