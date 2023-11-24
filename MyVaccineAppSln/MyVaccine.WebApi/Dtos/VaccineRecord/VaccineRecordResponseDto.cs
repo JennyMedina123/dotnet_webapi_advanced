@@ -3,14 +3,7 @@
     public class VaccineRecordResponseDto : VaccineRecordRequestDto
     {
     public int Id { get; set; }
-    public string Name { get; set; }
-    public DateTime  DateOfVaccineRecord { get; set; }
-    public int UserId { get; set; }
-    public int DependentId {  get; set; }
-    public int VaccineId  { get; set; }
-    public DateTime DateAdministered { get; set; }
-    public string AdministeredLocation { get; set; }
-    public string AdministeredBy { get; set; }
+    
 
     }
 }

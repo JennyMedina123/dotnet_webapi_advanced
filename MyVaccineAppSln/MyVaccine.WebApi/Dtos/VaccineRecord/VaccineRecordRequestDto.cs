@@ -2,7 +2,6 @@
 
 public class VaccineRecordRequestDto
 {
-    public string Name { get; set; }
     public DateTime  DateOfVaccineRecord { get; set; }
     public int UserId { get; set; }
     public int DependentId {  get; set; }
