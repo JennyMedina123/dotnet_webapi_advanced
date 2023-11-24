@@ -94,7 +94,10 @@ public class MyVaccineAppDbContext : IdentityDbContext<IdentityUser>
         });
 
         modelBuilder.Entity<Allergy>(entity =>
-        {
+        {          
+        //     entity.Property(i => i.allergiesId)
+        //         .HasDatabaseGeneratedOption(DatabaseGeneratedOption.Identity)
+        //   .HasColumnName("CustomIdName");
             entity.Property(a => a.Name)
                 .IsRequired()
                 .HasMaxLength(100);

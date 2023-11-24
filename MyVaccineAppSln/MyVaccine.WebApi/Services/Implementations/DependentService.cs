@@ -56,10 +56,6 @@ public class DependentService : IDependentService
         return response;
     }
 
-    public Task GetDependensByUserId(int userId)
-    {
-        throw new NotImplementedException();
-    }
 
     public async Task<IEnumerable<DependentResponseDto>> GetDependentsByUserId(int userId)
     {

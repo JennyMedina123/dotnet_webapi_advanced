@@ -1,4 +1,5 @@
 ﻿using FluentValidation;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http.HttpResults;
 using Microsoft.AspNetCore.Mvc;
 using MyVaccine.WebApi.Dtos.Dependent;
@@ -6,6 +7,7 @@ using MyVaccine.WebApi.Models;
 using MyVaccine.WebApi.Services.Contracts;
 
 namespace MyVaccine.WebApi.Controllers;
+[Authorize]
 [Route("api/[controller]")]
 [ApiController]
 public class DependentsController : ControllerBase
@@ -27,6 +29,7 @@ public class DependentsController : ControllerBase
         return Ok(dependents);
     }
 
+    [AllowAnonymous]
     [HttpGet("{id}")]
     public async Task<IActionResult> GetById(int id)
     {

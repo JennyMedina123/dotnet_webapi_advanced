@@ -1,8 +1,13 @@
-﻿namespace MyVaccine.WebApi.Models;
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace MyVaccine.WebApi.Models;
 public class Allergy : BaseTable
 {
-    public int AllergyId { get; set; }
-    public required string Name { get; set; }
+    [Key]
+    public int allergiesId { get; set; }
+    public string  Name { get; set; }
+    public DateTime DateOfAllergy { get; set; }
+
     public int UserId { get; set; }
-    public required User User { get; set; }
+    public User User { get; set; }
 }

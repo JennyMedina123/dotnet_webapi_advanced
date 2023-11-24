@@ -10,6 +10,5 @@ namespace MyVaccine.WebApi.Services.Contracts
         Task<DependentResponseDto> Update(DependentRequestDto request, int id);
         Task<DependentResponseDto> Delete(int id);
         Task<IEnumerable<DependentResponseDto>> GetDependentsByUserId(int userId);
-        Task GetDependensByUserId(int userId);
     }
 }
