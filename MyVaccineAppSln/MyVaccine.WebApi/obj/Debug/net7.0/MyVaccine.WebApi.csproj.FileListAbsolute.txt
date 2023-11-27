@@ -1,3 +1,10 @@
+C:\Users\USUARIO\Documents\proyectos\dotnet_webapi_advanced\MyVaccineAppSln\MyVaccine.WebApi\obj\Debug\net7.0\MyVaccine.WebApi.csproj.AssemblyReference.cache
+C:\Users\USUARIO\Documents\proyectos\dotnet_webapi_advanced\MyVaccineAppSln\MyVaccine.WebApi\obj\Debug\net7.0\MyVaccine.WebApi.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\USUARIO\Documents\proyectos\dotnet_webapi_advanced\MyVaccineAppSln\MyVaccine.WebApi\obj\Debug\net7.0\MyVaccine.WebApi.AssemblyInfoInputs.cache
+C:\Users\USUARIO\Documents\proyectos\dotnet_webapi_advanced\MyVaccineAppSln\MyVaccine.WebApi\obj\Debug\net7.0\MyVaccine.WebApi.AssemblyInfo.cs
+C:\Users\USUARIO\Documents\proyectos\dotnet_webapi_advanced\MyVaccineAppSln\MyVaccine.WebApi\obj\Debug\net7.0\MyVaccine.WebApi.csproj.CoreCompileInputs.cache
+C:\Users\USUARIO\Documents\proyectos\dotnet_webapi_advanced\MyVaccineAppSln\MyVaccine.WebApi\obj\Debug\net7.0\MyVaccine.WebApi.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\USUARIO\Documents\proyectos\dotnet_webapi_advanced\MyVaccineAppSln\MyVaccine.WebApi\obj\Debug\net7.0\MyVaccine.WebApi.MvcApplicationPartsAssemblyInfo.cache
 C:\Users\USUARIO\Documents\proyectos\dotnet_webapi_advanced\MyVaccineAppSln\MyVaccine.WebApi\bin\Debug\net7.0\appsettings.Development.json
 C:\Users\USUARIO\Documents\proyectos\dotnet_webapi_advanced\MyVaccineAppSln\MyVaccine.WebApi\bin\Debug\net7.0\appsettings.json
 C:\Users\USUARIO\Documents\proyectos\dotnet_webapi_advanced\MyVaccineAppSln\MyVaccine.WebApi\bin\Debug\net7.0\MyVaccine.WebApi.exe
@@ -65,13 +72,6 @@ C:\Users\USUARIO\Documents\proyectos\dotnet_webapi_advanced\MyVaccineAppSln\MyVa
 C:\Users\USUARIO\Documents\proyectos\dotnet_webapi_advanced\MyVaccineAppSln\MyVaccine.WebApi\bin\Debug\net7.0\runtimes\win\lib\net6.0\System.Runtime.Caching.dll
 C:\Users\USUARIO\Documents\proyectos\dotnet_webapi_advanced\MyVaccineAppSln\MyVaccine.WebApi\bin\Debug\net7.0\runtimes\win\lib\net6.0\System.Security.Cryptography.ProtectedData.dll
 C:\Users\USUARIO\Documents\proyectos\dotnet_webapi_advanced\MyVaccineAppSln\MyVaccine.WebApi\bin\Debug\net7.0\runtimes\win\lib\net6.0\System.Windows.Extensions.dll
-C:\Users\USUARIO\Documents\proyectos\dotnet_webapi_advanced\MyVaccineAppSln\MyVaccine.WebApi\obj\Debug\net7.0\MyVaccine.WebApi.csproj.AssemblyReference.cache
-C:\Users\USUARIO\Documents\proyectos\dotnet_webapi_advanced\MyVaccineAppSln\MyVaccine.WebApi\obj\Debug\net7.0\MyVaccine.WebApi.GeneratedMSBuildEditorConfig.editorconfig
-C:\Users\USUARIO\Documents\proyectos\dotnet_webapi_advanced\MyVaccineAppSln\MyVaccine.WebApi\obj\Debug\net7.0\MyVaccine.WebApi.AssemblyInfoInputs.cache
-C:\Users\USUARIO\Documents\proyectos\dotnet_webapi_advanced\MyVaccineAppSln\MyVaccine.WebApi\obj\Debug\net7.0\MyVaccine.WebApi.AssemblyInfo.cs
-C:\Users\USUARIO\Documents\proyectos\dotnet_webapi_advanced\MyVaccineAppSln\MyVaccine.WebApi\obj\Debug\net7.0\MyVaccine.WebApi.csproj.CoreCompileInputs.cache
-C:\Users\USUARIO\Documents\proyectos\dotnet_webapi_advanced\MyVaccineAppSln\MyVaccine.WebApi\obj\Debug\net7.0\MyVaccine.WebApi.MvcApplicationPartsAssemblyInfo.cs
-C:\Users\USUARIO\Documents\proyectos\dotnet_webapi_advanced\MyVaccineAppSln\MyVaccine.WebApi\obj\Debug\net7.0\MyVaccine.WebApi.MvcApplicationPartsAssemblyInfo.cache
 C:\Users\USUARIO\Documents\proyectos\dotnet_webapi_advanced\MyVaccineAppSln\MyVaccine.WebApi\obj\Debug\net7.0\staticwebassets\msbuild.MyVaccine.WebApi.Microsoft.AspNetCore.StaticWebAssets.props
 C:\Users\USUARIO\Documents\proyectos\dotnet_webapi_advanced\MyVaccineAppSln\MyVaccine.WebApi\obj\Debug\net7.0\staticwebassets\msbuild.build.MyVaccine.WebApi.props
 C:\Users\USUARIO\Documents\proyectos\dotnet_webapi_advanced\MyVaccineAppSln\MyVaccine.WebApi\obj\Debug\net7.0\staticwebassets\msbuild.buildMultiTargeting.MyVaccine.WebApi.props

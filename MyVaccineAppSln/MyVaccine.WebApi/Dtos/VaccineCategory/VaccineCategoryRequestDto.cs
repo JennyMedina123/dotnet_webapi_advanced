@@ -3,6 +3,5 @@
 public class VaccineCategoryRequestDto
 {
     public string Name { get; set; }
-    public DateTime DateOfVaccineCategory { get; set; }
-    public int UserId { get; set; }
+    //public int UserId { get; set; }
 }

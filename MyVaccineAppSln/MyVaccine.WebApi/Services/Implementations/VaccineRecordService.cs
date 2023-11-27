@@ -1,10 +1,13 @@
 ﻿using AutoMapper;
 using Azure.Core;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Server.IIS;
 using Microsoft.EntityFrameworkCore;
 using MyVaccine.WebApi.Dtos.VaccineRecord;
 using MyVaccine.WebApi.Models;
 using MyVaccine.WebApi.Repositories.Contracts;
 using MyVaccine.WebApi.Services.Contracts;
+using BadHttpRequestException = Microsoft.AspNetCore.Http.BadHttpRequestException;
 
 namespace MyVaccine.WebApi.Services.Implementations;
 
@@ -24,7 +27,7 @@ public class VaccineRecordService : IVaccineRecordService
         //var dependents = await _dependentRepository.FindBy(x => x.DependentId == id).FirstOrDefaultAsync();
         var vaccinerecords = new VaccineRecord();
         vaccinerecords.UserId = request.UserId;
-        vaccinerecords.DateAdministered = request.DateOfVaccineRecord;
+        vaccinerecords.DateAdministered = request.DateAdministered;
         vaccinerecords.DependentId = request.DependentId;
         vaccinerecords.VaccineId = request.VaccineId;
         vaccinerecords.AdministeredLocation = request.AdministeredLocation;
@@ -63,9 +66,13 @@ public class VaccineRecordService : IVaccineRecordService
     public async Task<VaccineRecordResponseDto> Update(VaccineRecordRequestDto request, int id)
     {
         var vaccinerecords = await _vaccinerecordRepository.FindBy(x => x.VaccineRecordId == id).FirstOrDefaultAsync();
-       
+        if (vaccinerecords == null)
+        {
+            return new VaccineRecordResponseDto();
+            ;
+        }
         vaccinerecords.UserId = request.UserId;
-        vaccinerecords.DateAdministered = request.DateOfVaccineRecord;
+        vaccinerecords.DateAdministered = request.DateAdministered;
         vaccinerecords.DependentId = request.DependentId;
         vaccinerecords.VaccineId = request.VaccineId;
         vaccinerecords.AdministeredLocation = request.AdministeredLocation;

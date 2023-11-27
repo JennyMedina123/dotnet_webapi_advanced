@@ -23,7 +23,7 @@ public class FamilyGroupService : IFamilyGroupService
     {
         //var dependents = await _dependentRepository.FindBy(x => x.DependentId == id).FirstOrDefaultAsync();
         var familygroups = new FamilyGroup();
-        familygroups.Name = request.Name = "";
+        familygroups.Name = request.Name;
 
         await _familygroupRepository.Add(familygroups);
         var response = _mapper.Map<FamilyGroupResponseDto>(familygroups);

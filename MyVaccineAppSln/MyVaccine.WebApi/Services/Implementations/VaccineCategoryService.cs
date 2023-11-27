@@ -23,7 +23,7 @@ public class VaccineCategoryService : IVaccineCategoryService
     {
         //var dependents = await _dependentRepository.FindBy(x => x.DependentId == id).FirstOrDefaultAsync();
         var vaccinecategories = new VaccineCategory();
-        vaccinecategories.Name = request.Name = "";
+        vaccinecategories.Name = request.Name;
 
         await _vaccinecategoryRepository.Add(vaccinecategories);
         var response = _mapper.Map<VaccineCategoryResponseDto>(vaccinecategories);

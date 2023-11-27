@@ -23,8 +23,7 @@ public class AllergyService : IAllergyService
     {
         //var dependents = await _dependentRepository.FindBy(x => x.DependentId == id).FirstOrDefaultAsync();
         var allergies = new Allergy();
-        allergies.Name = request.Name = "";
-        allergies.DateOfAllergy = request.DateOfAllergy;
+        allergies.Name = request.Name;
         allergies.UserId = request.UserId;
 
         await _allergyRepository.Add(allergies);
@@ -35,7 +34,7 @@ public class AllergyService : IAllergyService
     public async Task<AllergyResponseDto> Delete(int id)
     {
 
-        var allergies = await _allergyRepository.FindBy(x => x.allergiesId == id).FirstOrDefaultAsync();
+        var allergies = await _allergyRepository.FindBy(x => x.AllergyId == id).FirstOrDefaultAsync();
        
         await _allergyRepository.Delete(allergies);
         var response = _mapper.Map<AllergyResponseDto>(allergies);
@@ -51,7 +50,7 @@ public class AllergyService : IAllergyService
 
     public async Task<AllergyResponseDto> GetById(int id)
     {
-        var allergies = await _allergyRepository.FindByAsNotTraking(x => x.allergiesId == id).FirstOrDefaultAsync();
+        var allergies = await _allergyRepository.FindByAsNotTraking(x => x.AllergyId == id).FirstOrDefaultAsync();
         var response = _mapper.Map<AllergyResponseDto>(allergies);
         return response;
     }
@@ -66,9 +65,8 @@ public class AllergyService : IAllergyService
 
     public async Task<AllergyResponseDto> Update(AllergyRequestDto request, int id)
     {
-        var allergies = await _allergyRepository.FindBy(x => x.allergiesId == id).FirstOrDefaultAsync();
+        var allergies = await _allergyRepository.FindBy(x => x.AllergyId == id).FirstOrDefaultAsync();
         allergies.Name = request.Name;
-        allergies.DateOfAllergy = request.DateOfAllergy;
         allergies.UserId = request.UserId;
 
         await _allergyRepository.Update(allergies);
